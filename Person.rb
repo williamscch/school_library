@@ -1,16 +1,16 @@
-class Person 
+class Person
   def initialize(age, name = "Unknown", parent_permission = true)
-     @id = Random.rand(1..100)
-     @name = name
-     @parent_permission = parent_permission
+    @id = Random.rand(1..100)
+    @name = name
+    @parent_permission = parent_permission
   end
 
-  def id 
+  def id
     @id
   end
 
-  def name 
-    @name 
+  def name
+    @name
   end
 
   def age
@@ -18,22 +18,20 @@ class Person
   end
 
   def name=(value)
-   @name = value
+    @name = value
   end
 
-  def age=(value) 
+  def age=(value)
     @age = value
   end
 
-
-
-  def can_use_services? 
-   is_of_age? || @parent_permission
+  def can_use_services?
+    is_of_age? || @parent_permission
   end
 
   private
 
-  def is_of_age? 
-   @age>= 18
-   end
+  def is_of_age?
+    @age >= 18
+  end
 end
