@@ -1,75 +1,74 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# School Library Ruby
 
-> Description the project.
+> Object Oriented Programming app. Simulates a library of an University, a useful tool that records what books are in the library and who borrows them. This app will allow you to:
 
+- Add new students or teachers.
+- Add new books.
+- Save records of who borrowed a given book and when.
+- And all of this will be built in a beautiful and well-organized way! 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
-
+- [x] Programming Language: Ruby
+- [x] Linter: [Rubocop](https://rubocop.org/)
+- [x] VS Code
+- [x] Object Oriented Programming
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
+- [x] A web browser like Google Chrome.
+- [x] A code editor like Visual Studio Code with Git and Ruby.
+
+You can check if Git is installed by running the following command in the terminal.
+```
+$ git --version
+```
+
+Likewise for Ruby installation.
+```
+$ ruby --version && irb
+```
+
 ### Setup
+
+Clone the repository using the GitHub link provided below.
 
 ### Install
 
+In the terminal, go to your file directory and run this command.
+
+```
+$ git clone git@github.com:mavericks-db/my-enumerable.git
+```
+
 ### Usage
 
-### Run tests
-
-### Deployment
-
-
+Kindly modify the files as needed.
 
 ## Authors
 
-👤 **Author1**
+👤 **Williams Colmenares**
+- GitHub: [@williamscch](https://github.com/williamscch)
+- Twitter: [@wdavidcch](https://twitter.com/wdavidcch)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/williamscolmenaresch/)
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/nimplay/enumerable/issues).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+This project is [MIT](./LICENCE) licensed.
