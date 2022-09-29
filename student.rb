@@ -6,10 +6,10 @@ class Student < Person
     @classroom = classroom
   end
 
-  def classroom=(classroom) 
-  @classroom = classroom
+  def classroom=(classroom)
+    @classroom = classroom
 
-  @classroom.students.push(self)
+    @classroom.students.push(self)
   end
 
   def play_hooky
