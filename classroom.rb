@@ -8,6 +8,6 @@ class Classroom
   attr_reader :students
 
   def add_student(stud)
-    @students.push(stud)
+    @students.push(stud) 
   end
 end
