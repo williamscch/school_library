@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'book'
 require_relative 'student'
 require_relative 'teacher'
@@ -6,6 +8,7 @@ require_relative 'rental'
 require_relative 'utilities'
 require_relative 'classroom'
 
+# Class App
 class App
   def initialize
     @persons = []
@@ -14,7 +17,11 @@ class App
     @classroom = Classroom.new('Joe Classroom')
   end
 
-  def list_all_books; end
+  def list_all_books
+    @books.each do |b|
+      puts "Title: '#{b.title}', Author: '#{b.author}'"
+    end
+  end
 
   def list_all_persons
     @persons.each do |p|
@@ -56,9 +63,33 @@ class App
 
     @books.push(Book.new(title, author))
     puts 'Book Created Succesfully'
-end
+  end
 
-  def create_rental; end
+  def create_rental
+    puts 'Select a book from the following list by number'
+    @books.each_with_index do |b, i|
+      puts "#{i}) Title: '#{b.title}', Author: '#{b.author}'"
+    end
+    selected_book = Utilities.validate_input(0, @books.length - 1)
+    puts 'Select a person from the following list by number'
+    @persons.each_with_index do |p, i|
+      puts "#{i}) [#{p.class.name}] Name: #{p.name} ID: #{p.id} Age: #{p.age}\n"
+    end
+    selected_person = Utilities.validate_input(0, @persons.length - 1)
+    date = Utilities.get_input('Date')
+    @rentals.push(Rental.new(@persons[selected_person], @books[selected_book], date))
+    puts 'Rental Created Succesfully'
+  end
 
-  def list_all_rentals(person_id); end
+  def list_all_rentals
+    input_person_id = Utilities.get_input('ID of Person')
+    puts 'Rentals:'
+    @rentals.each do |r|
+      next unless r.person.id.to_i == input_person_id.to_i
+
+      print "Date: #{r.date}, "
+      print "Book: \"#{r.book.title}\" "
+      print "by #{r.book.author}\n"
+    end
+  end
 end

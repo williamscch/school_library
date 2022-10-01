@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
+require 'date'
+
 # Class Rental
 class Rental
-  def initialize(person, book)
-    @date = DateTime.now
+  def initialize(person, book, date)
+    @date = date
     @person = person
     @book = book
     @person.rentals << self

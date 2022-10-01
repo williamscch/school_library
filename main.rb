@@ -30,7 +30,7 @@ class Main
   def choosed_option(option)
     case option
     when 1
-      puts 'option 1'
+      @app.list_all_books
     when 2
       @app.list_all_persons
     when 3
@@ -38,9 +38,9 @@ class Main
     when 4
       @app.create_book
     when 5
-      puts 'option 5'
+      @app.create_rental
     when 6
-      puts 'option 6'
+      @app.list_all_rentals
     end
   end
 
