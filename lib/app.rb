@@ -1,0 +1,64 @@
+require_relative 'book'
+require_relative 'student'
+require_relative 'teacher'
+require_relative 'person'
+require_relative 'rental'
+require_relative 'utilities'
+require_relative 'classroom'
+
+class App
+  def initialize
+    @persons = []
+    @books = []
+    @rentals = []
+    @classroom = Classroom.new('Joe Classroom')
+  end
+
+  def list_all_books; end
+
+  def list_all_persons
+    @persons.each do |p|
+      print "[#{p.class.name}] "
+      print "Name: #{p.name} "
+      print "ID: #{p.id} "
+      print "Age: #{p.age}\n"
+    end
+  end
+
+  def create_person
+    puts 'Do you want to create a student (1) or a teacher (2)?'
+    option_validated = Utilities.validate_input(1, 2)
+    create_student if option_validated == 1
+    create_teacher if option_validated == 2
+  end
+
+  def create_student
+    age = Utilities.get_input('Age')
+    name = Utilities.get_input('Name')
+    parent_permission = Utilities.get_input('Has parent permission? [Y/N]')
+
+    @persons.push(Student.new(age, @classroom, name, parent_permission))
+    puts 'Person Created Succesfully'
+  end
+
+  def create_teacher
+    age = Utilities.get_input('Age')
+    name = Utilities.get_input('Name')
+    specialization = Utilities.get_input('Specialization')
+
+    @persons.push(Teacher.new(age, specialization, name, true))
+    puts 'Person Created Succesfully'
+  end
+
+  def create_book
+    title = Utilities.get_input('Title')
+    author = Utilities.get_input('Author')
+
+    @books.push(Book.new(title, author))
+    puts 'Book Created Succesfully'
+end
+
+  def create_rental; end
+
+  def list_all_rentals(person_id); end
+end

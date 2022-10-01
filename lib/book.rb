@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Class Book
 class Book
   def initialize(title, author)
     @title = title
