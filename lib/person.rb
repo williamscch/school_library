@@ -1,7 +1,10 @@
+# frozen_string_literal: true
+
 require_relative './nameable'
 
+# Class Person
 class Person < Nameable
-  def initialize(age, name = 'Unknown', parent_permission: true)
+  def initialize(age, name, parent_permission)
     super()
     @id = Random.rand(1..100)
     @age = age

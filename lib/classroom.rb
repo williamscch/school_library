@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Class Classroom
 class Classroom
   def initialize(label)
     @label = label
