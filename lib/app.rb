@@ -7,6 +7,7 @@ require_relative 'person'
 require_relative 'rental'
 require_relative 'utilities'
 require_relative 'classroom'
+require 'json'
 
 # Class App
 class App
@@ -91,5 +92,19 @@ class App
       print "Book: \"#{r.book.title}\" "
       print "by #{r.book.author}\n"
     end
+  end
+
+  def preserve_data 
+    book_objects = []
+    @books.each {|book|
+      book_obj = {title: book.title, author: book.author}
+      book_objects.push(book_obj)
+    }
+    File.write('./data/book.json',JSON.generate(book_objects))
+  end
+
+  def get_data 
+    file = JSON.parse(File.read('./data/book.json'))
+    p file
   end
 end
