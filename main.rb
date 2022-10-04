@@ -51,7 +51,7 @@ class Main
       option_validated = Utilities.validate_input(1, 7)
 
       if option_validated == 7
-        @app.preserve_data
+        @app.save_data
         @app.get_data
         break
       end

@@ -8,9 +8,10 @@ require_relative 'rental'
 require_relative 'utilities'
 require_relative 'classroom'
 require 'json'
-
+require_relative '../manipulate_data'
 # Class App
 class App
+  include Preserve_data
   def initialize
     @persons = []
     @books = []
@@ -94,13 +95,8 @@ class App
     end
   end
 
-  def preserve_data 
-    book_objects = []
-    @books.each {|book|
-      book_obj = {title: book.title, author: book.author}
-      book_objects.push(book_obj)
-    }
-    File.write('./data/book.json',JSON.generate(book_objects))
+  def save_data
+    preserve_books
   end
 
   def get_data 
