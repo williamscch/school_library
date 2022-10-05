@@ -39,7 +39,7 @@ module PreserveData
     @rentals.each do |rental|
       rental_obj = {
         date: rental.date,
-        person: { id: rental.person.id },
+        person: { name: rental.person.name },
         book: { title: rental.book.title }
       }
       rentals_objects.push(rental_obj)
@@ -73,6 +73,19 @@ module LoadData
                        Teacher.new(person['age'], person['specialization'], person['name'], person['parent_permission'])
                      end
         @persons.push(new_person)
+      end
+    else
+      ''
+    end
+  end
+
+  def load_rentals
+    if File.exist?('./data/rentals.json') && File.size('./data/rentals.json').positive?
+      file_data = JSON.parse(File.read('./data/rentals.json'))
+      file_data.each do |rental|
+        person_index =  @persons.index { |person| person.name.eql?(rental['person']['name']) }
+        book_index = @books.index { |book| book.title.eql?(rental['book']['title']) }
+        @rentals << Rental.new(@persons[person_index], @books[book_index], rental['date'])
       end
     else
       ''

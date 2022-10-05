@@ -98,12 +98,13 @@ class App
 
   def save_data
     preserve_books
-    preserve_rentals
     preserve_persons
+    preserve_rentals
   end
 
   def fetch_data
     load_books
     load_persons
+    load_rentals
   end
 end
