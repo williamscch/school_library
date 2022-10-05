@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Class Rental
 class Rental
   def initialize(person, book, date)

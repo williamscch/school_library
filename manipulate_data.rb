@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative './lib/book'
 
 # this module will help preserve the data when the app is closed
@@ -83,7 +81,7 @@ module LoadData
     if File.exist?('./data/rentals.json') && File.size('./data/rentals.json').positive?
       file_data = JSON.parse(File.read('./data/rentals.json'))
       file_data.each do |rental|
-        person_index =  @persons.index { |person| person.name.eql?(rental['person']['name']) }
+        person_index = @persons.index { |person| person.name.eql?(rental['person']['name']) }
         book_index = @books.index { |book| book.title.eql?(rental['book']['title']) }
         @rentals << Rental.new(@persons[person_index], @books[book_index], rental['date'])
       end

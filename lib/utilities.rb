@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Useful methods to get inputs
 class Utilities
   def self.validate_input(from, to)
