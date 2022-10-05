@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative 'book'
 require_relative 'student'
 require_relative 'teacher'
@@ -7,9 +5,12 @@ require_relative 'person'
 require_relative 'rental'
 require_relative 'utilities'
 require_relative 'classroom'
-
+require 'json'
+require_relative '../manipulate_data'
 # Class App
 class App
+  include LoadData
+  include PreserveData
   def initialize
     @persons = []
     @books = []
@@ -91,5 +92,17 @@ class App
       print "Book: \"#{r.book.title}\" "
       print "by #{r.book.author}\n"
     end
+  end
+
+  def save_data
+    preserve_books
+    preserve_persons
+    preserve_rentals
+  end
+
+  def fetch_data
+    load_books
+    load_persons
+    load_rentals
   end
 end

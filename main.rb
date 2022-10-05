@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative './lib/app'
 require_relative './lib/utilities'
 
@@ -46,11 +44,15 @@ class Main
 
   def main
     welcome
+    @app.fetch_data
     loop do
       print_main_menu
       option_validated = Utilities.validate_input(1, 7)
 
-      break if option_validated == 7
+      if option_validated == 7
+        @app.save_data
+        break
+      end
 
       next unless option_validated
 

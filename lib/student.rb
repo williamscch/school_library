@@ -1,9 +1,9 @@
-# frozen_string_literal: true
-
 require_relative './person'
 
 # Class Student
 class Student < Person
+  attr_reader :classroom
+
   def initialize(age, classroom, name, parent_permission)
     super(age, name, parent_permission)
     @classroom = classroom
