@@ -11,7 +11,8 @@ require 'json'
 require_relative '../manipulate_data'
 # Class App
 class App
-  include Preserve_data
+  include LoadData
+  include PreserveData
   def initialize
     @persons = []
     @books = []
@@ -97,10 +98,10 @@ class App
 
   def save_data
     preserve_books
+    preserve_rentals
   end
 
-  def get_data 
-    file = JSON.parse(File.read('./data/book.json'))
-    p file
+  def fetch_data
+    load_books
   end
 end
