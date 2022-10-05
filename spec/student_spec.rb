@@ -9,6 +9,13 @@ describe Student do
       expect(@student).to_not be_nil
     end
 
-    it ''
+    it 'Should be able to use the method Play Hooky' do
+      expect(@student.play_hooky).to match("¯\(ツ)/¯")
+    end
+
+    it 'Should change Partent Permission' do
+      @student.parent_permission = true
+      expect(@student.parent_permission).to be_truthy
+    end
   end
 end
